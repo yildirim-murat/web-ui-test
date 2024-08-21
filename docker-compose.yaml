@@ -1,0 +1,12 @@
+services:
+  web:
+    image: react-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:3000"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_OPTIONS=--max_old_space_size=4096
